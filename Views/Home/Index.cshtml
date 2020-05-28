@@ -1,0 +1,44 @@
+﻿@model mini_project.Models.prayer
+
+@{
+    var area_list = ViewData["areas"] as List<string>;
+}
+      
+<!DOCTYPE html>
+<html>
+<body>
+    <label><b> location and Mosque : </b></label>
+    <br /><br />
+    <form action="/Home/add" method="get">
+        Enter location: <input type="text" name="location" /><br /><br />
+        Enter Masjid Name: <input type="text" name="masjid" /><br /><br />
+        Enter The Prayer Timings:<br /><br />
+
+        Fajr = <input type="text" name="f" /><br /><br />
+        Zuhr = <input type="text" name="z" /><br /><br />
+        Asar = <input type="text" name="a" /><br /><br />
+        Magrib = <input type="text" name="m" /><br /><br />
+        Esha = <input type="text" name="e" /><br /><br />
+
+        <input type="submit" name="add" value="ADD" />
+    </form>  
+    <br /><br /><br />
+    <form action="/Home/find" method="get">
+        <label>Choose Area:</label><br /><br />
+
+        <select name="areas" id="locations">
+            @foreach(var a in area_list)
+            {
+                <option value=@a>@a</option>
+            }
+        </select>
+        <br /><br />
+        <input type="submit" name="find" value="FIND" />
+        
+    </form>
+    
+
+</body>
+</html>
+
+

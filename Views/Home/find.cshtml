@@ -1,0 +1,29 @@
+﻿@model List<mini_project.Models.prayer>
+<form method="get">
+    <table border="1">
+        <tr>
+            <td>Masjid Name</td>
+            <td>Masjid Area</td>
+            <td>Fajr time</td>
+            <td>Zuhr time</td>
+            <td>Asar time</td>
+            <td>Magrib time</td>
+            <td>Esha time</td>
+        </tr>
+        @foreach (var a in Model)
+        {
+            <tr>
+            <td>@a.masjid_name</td>
+            <td>@a.masjid_area</td>
+            <td>@a.fajr_time</td>
+            <td>@a.zuhr_time</td>
+            <td>@a.asar_time</td>
+            <td>@a.magrib_time</td>
+            <td>@a.esha_time</td>
+            <td>
+                <a href="/Home/EditDone/@a.Id">EDIT</a>
+            </td>
+        </tr>
+        }
+    </table>
+</form>

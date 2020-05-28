@@ -1,0 +1,14 @@
+﻿@model mini_project.Models.prayer
+@{
+    ViewBag.Title = "EditDone";
+}
+<form action="/Home/editOK/@Model.Id" method="get">
+    Masjid Name:<input type="text" name="mn" value="@Model.masjid_name" /><br /><br />
+    Masjid location:<input type="text" name="ml" value="@Model.masjid_area" /><br /><br />
+    Fajr Time:<input type="text" name="ft" value="@Model.fajr_time" /><br /><br />
+    ZuhrTime:<input type="text" name="zt" value="@Model.zuhr_time" /><br /><br />
+    Asar Time:<input type="text" name="at" value="@Model.asar_time" /><br /><br />
+    Magrib Time:<input type="text" name="mt" value="@Model.magrib_time" /><br /><br />
+    Esha Time:<input type="text" name="et" value="@Model.esha_time" /><br /><br />
+    <input type="submit" value="Submit Changes"/>
+</form>
